@@ -9,11 +9,13 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }

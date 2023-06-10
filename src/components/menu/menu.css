@@ -1,0 +1,11 @@
+.menu{
+    max-width: 1200px;
+    margin: auto;  
+}
+
+.menu h3{
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 300px;
+    line-height: 1.1;
+}

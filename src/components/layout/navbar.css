@@ -6,10 +6,11 @@ header {
   justify-content: space-between;
   align-items: center;
   position: sticky;
+  z-index: 100;
 }
 
 header > img {
-  width: 300px;
+  width: 250px;
 }
 
 .hamburger{
