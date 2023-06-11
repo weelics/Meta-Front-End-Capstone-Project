@@ -30,15 +30,19 @@
   border: 0px;
   width: 100px;
   height: 100px;
-  color: #f4ce14;
+  color: #f6dc56;
   font-size: 16px;
   font-weight: 800;
   transition: all 0.3s ease;
 }
 
 .section-header > button:hover {
-  background: #f4ce14;
+  background: #f6dc56;
   color: #495e57;
+}
+
+.card {
+  width: 350px;
 }
 
 .card > img {
@@ -75,13 +79,14 @@
   margin-top: 1.2rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1220px) {
   .lista-menu {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
   }
-
+}
+@media screen and (max-width: 490px) {
   .section-header {
     justify-content: space-evenly;
   }

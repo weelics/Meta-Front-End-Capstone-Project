@@ -31,20 +31,22 @@
   inset: 0;
   display: block;
   background: black;
-  opacity: 0.3;
+  opacity: 0.4;
   border-radius: 1rem;
 
 }
 
-.message h2 {
+.message > h2 {
   font-size: 4.5rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.1;
+  color: #F4F3E7;
+  text-align: start;
 }
 
-.message p {
-  font-weight: 600;
+.message > p {
+  font-weight: 400;
 }
 
 @media screen and (max-width: 720px) {
@@ -61,7 +63,7 @@
   }
 
   .message h2 {
-    font-size: 3rem;
+    font-size: 3.1rem;
   }
 
   .message p {
