@@ -16,7 +16,6 @@ const Navbar = () => {
         <h4>Home</h4>
         <h4>Our Menus</h4>
         <h4>About Us</h4>
-        <h4>Contact Us</h4>
         <button>Make a Reservation </button>
         <img  onClick={() => setShow(false)} src={Close} alt="icon"></img>
       </nav>
