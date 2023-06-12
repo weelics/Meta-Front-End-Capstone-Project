@@ -1,5 +1,6 @@
 header {
   max-width: 1200px;
+  transform: translateY(-100%);
   margin: auto;
   padding: 1rem;
   display: flex;
@@ -8,9 +9,15 @@ header {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 99;
   background: rgba(244, 243, 231,0.8);
   backdrop-filter: blur(5px);
+  transition: transform 0.5s ease;
+}
+
+
+.scroll{
+  transform: translateY(0);
 }
 
 header > img {
@@ -76,6 +83,10 @@ nav > h4:hover {
         transform: translateX(0);
     }
 
+   .noscroll{
+      overflow-y: hidden;
+    }
+
     nav > button{
         padding: 1rem;
         margin-top: auto;
@@ -84,7 +95,7 @@ nav > h4:hover {
 
     nav > img {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 30px;
