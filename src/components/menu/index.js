@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Card from "./card";
 import "./menu.css";
 
@@ -34,7 +35,7 @@ const Menù = () => {
     <section className="menu">
       <div className="section-header">
         <h3>View Our Menus</h3>
-        <button>View All</button>
+        <Link to={"/menu"}><button>View All</button></Link>
       </div>
       <div className="lista-menu">
         {foods.map((food) => {

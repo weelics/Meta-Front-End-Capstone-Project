@@ -10,13 +10,12 @@ header {
   top: 0;
   left: 0;
   z-index: 99;
-  background: rgba(244, 243, 231,0.8);
+  background: rgba(244, 243, 231, 0.8);
   backdrop-filter: blur(5px);
   transition: transform 0.5s ease;
 }
 
-
-.scroll{
+.scroll {
   transform: translateY(0);
 }
 
@@ -24,96 +23,101 @@ header > img {
   width: 250px;
 }
 
-.hamburger{
-    display: none;
+.hamburger {
+  display: none;
 }
 
 nav {
   display: flex;
   gap: 2.5rem;
+  list-style-type: none;
+  align-items: center;
 }
 
 nav > img {
-    display: none;
+  display: none;
 }
 
-nav > button {
+nav button {
   background: #495e57;
   border-radius: 50px;
   border: 0px;
+  padding: 0.8rem;
   padding-inline: 1.5rem;
+
   color: #f6dc56;
   font-size: 16px;
   font-weight: 800;
   transition: all 0.3s ease;
 }
 
-nav > button:hover {
+nav button:hover {
   transform: scale(0.9);
   background: #f6dc56;
   color: #495e57;
 }
 
-nav > h4 {
+nav > li {
   color: #40443d;
   font-size: 18px;
   font-weight: 600;
 }
 
-nav > h4:hover {
+nav > li:hover {
   text-decoration: underline;
   text-underline-offset: 1rem;
 }
 
 @media screen and (max-width: 1170px) {
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        flex-direction: column;
-        gap: 0px;
-        background: white;
-        height: 100vh;
-        padding: 1rem;
-        transition: all 0.5s ease-in;
-    }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    flex-direction: column;
+    gap: 40px;
+    background: white;
+    height: 100vh;
+    padding: 1rem;
+    padding-top: 6rem;
+    transition: all 0.5s ease-in;
+  }
 
-    .show{
-        transform: translateX(0);
-    }
+  .show {
+    transform: translateX(0);
+  }
 
-   .noscroll{
-      overflow-y: hidden;
-    }
+  .noscroll {
+    overflow-y: hidden;
+  }
 
-    nav > button{
-        padding: 1rem;
-        margin-top: auto;
-        margin-bottom: 4rem;
-    }
+  nav > button {
+    padding: 1rem;
+    margin-top: auto;
+    margin-bottom: 4rem;
+  }
 
-    nav > img {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 30px;
-        padding: 20px;
-    }
-    
-    header {
-        padding: 10px;
-    }
-    header > img {
-        width: 200px;
-    }
+  nav > img {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30px;
+    padding: 20px;
+  }
 
-    .hamburger{
-        display: block;
-    }
+  header {
+    padding: 10px;
+  }
+  header > img {
+    width: 200px;
+  }
 
-    .hamburger > img {
-        width: 30px;
-    }
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger > img {
+    width: 30px;
+  }
 }

@@ -1,0 +1,99 @@
+footer {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.callme{
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.4rem;
+}
+
+.callme > h5{
+    color: #0e150e ;
+    font-weight: 600;
+    font-size: large;
+}
+
+.callme button {
+    background: #495e57;
+    border-radius: 50px;
+    border: 0px;
+    padding-inline: 1.3rem;
+    padding: 1rem;
+    color: #f6dc56;
+    font-size: 14px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+  }
+  
+  .callme button:hover {
+    transform: scale(0.9);
+    background: #f6dc56;
+    color: #495e57;
+  }
+  
+
+.informations {
+  display: flex;
+  justify-content: space-around;
+  gap: 6rem;
+  align-items: center;
+  font-size: small;
+}
+
+.informations > ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.informations > ul > li {
+  margin: 20px;
+}
+
+.informatios-date {
+  font-weight: 300;
+  max-width: 400px;
+}
+
+.informations > img {
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .callme{
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 4rem;
+    }
+
+  .informations {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .informatios-date {
+    padding-inline: 3rem;
+  }
+
+  .informations > ul {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .informatios > ul > li {
+    margin: 0;
+    padding: 0;
+  }
+}

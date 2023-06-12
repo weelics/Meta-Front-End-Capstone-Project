@@ -24,7 +24,7 @@
   color: #0e150e;
 }
 
-.section-header > button {
+.section-header button {
   background: #495e57;
   border-radius: 50px;
   border: 0px;
@@ -36,7 +36,7 @@
   transition: all 0.3s ease;
 }
 
-.section-header > button:hover {
+.section-header button:hover {
   background: #f6dc56;
   color: #495e57;
 }
