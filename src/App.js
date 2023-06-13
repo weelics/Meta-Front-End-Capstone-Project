@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Booking from "./pages/booking";
+import BookingConfirmation from "./pages/bookingconfirmation";
 import NotFound from "./pages/404";
 import "./App.css";
 import UpIcon from "./assets/up.png"
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/bookingconfirmation" element={<BookingConfirmation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

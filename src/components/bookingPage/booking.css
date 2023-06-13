@@ -4,7 +4,7 @@
   padding-top: 1rem;
 }
 
-.booking h1 {
+.booking > h1 {
   text-align: center;
   font-size: xx-large;
   font-weight: 400;
@@ -13,7 +13,6 @@
 
 .form {
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
 }
 
@@ -24,12 +23,82 @@
   object-fit: cover;
 }
 
+.form h1 {
+  font-size: large;
+  margin: 0;
+  font-weight: 600;
+}
 
+.form p {
+  font-size: smaller;
+  margin: 0;
+  font-weight: 300;
+  padding-right: 3rem;
+}
+
+.form h4 {
+  font-size: small;
+  margin: 0;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.module {
+  padding: 1rem;
+}
+
+.module form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.module input {
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.module label {
+  display: block;
+}
+
+.module span{
+  display: block;
+  margin: 0;
+  color: red;
+}
+
+.module button {
+  background: #495e57;
+  border-radius: 50px;
+  border: 0px;
+  padding: 0.8rem;
+  padding-inline: 1.5rem;
+
+  color: #f6dc56;
+  font-size: 16px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.module button:hover {
+  transform: scale(0.9);
+  background: #f6dc56;
+  color: #495e57;
+}
+
+.module select{
+  padding: 0.8rem;
+  border-radius: 10px;
+}
 
 @media screen and (max-width: 1210px) {
+  .booking {
+    padding-top: 0;
+  }
   .form {
     flex-direction: column;
-    gap: 5rem;
+    gap: 1rem;
   }
 
   .form > img {
@@ -38,5 +107,7 @@
     border-radius: 0;
   }
 
-
+  .booking > h1 {
+    display: none;
+  }
 }

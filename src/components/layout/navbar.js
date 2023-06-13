@@ -42,10 +42,10 @@ const Navbar = () => {
           <Link to={"/"}>Home</Link>
         </li>
         <li onClick={() => setShow(false)}>
-          <Link to={"/menu"}>Our Menus</Link>
+          <Link >Our Menus</Link>
         </li>
         <li onClick={() => setShow(false)}>
-          <Link to={"/aboutus"}>About Us</Link>
+          <Link >About Us</Link>
         </li>
         <Link to={"/booking"}>
           <button onClick={() => setShow(false)}>Make a Reservation </button>
