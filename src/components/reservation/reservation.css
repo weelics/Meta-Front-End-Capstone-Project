@@ -1,0 +1,30 @@
+.reservation {
+  padding: 1rem;
+}
+.reservation > h1 {
+  font-size: xx-large;
+  font-weight: 500;
+}
+.reservation-schema {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.reservation-data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #0e150e;
+  font-size: large;
+}
+
+.reservation-data dt {
+  font-weight: 600;
+  font-size: large;
+}
+
+.reservation-data dd {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}

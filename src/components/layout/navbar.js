@@ -48,7 +48,7 @@ const Navbar = () => {
           <Link >About Us</Link>
         </li>
         <Link to={"/booking"}>
-          <button onClick={() => setShow(false)}>Make a Reservation </button>
+          <button onClick={() => setShow(false)}>Make a Reservation</button>
         </Link>
         <img onClick={() => setShow(false)} src={Close} alt="icon"></img>
       </nav>
