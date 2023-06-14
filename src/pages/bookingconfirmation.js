@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormContext } from "../context/formcontext";
+import Reservation from "../components/reservation";
 import "../App.css";
 const BookingConfirmation = () => {
   const { formValues } = useContext(FormContext);
@@ -14,11 +15,11 @@ const BookingConfirmation = () => {
   console.log(elements());
   return (
     <section className="confirmation">
-      {Object.values(formValues).every((value) => value === "")
-        ? <h6>nessuna prenotazione</h6>
-        : elements().map((value, i) => {
-            return <p key={i}>{value}</p>;
-          })}
+      {Object.values(formValues).every((value) => value === "") ? (
+        <h6>nessuna prenotazione</h6>
+      ) : (
+        <Reservation />
+      )}
     </section>
   );
 };

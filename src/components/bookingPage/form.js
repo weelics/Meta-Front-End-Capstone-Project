@@ -17,24 +17,19 @@ const BookingForm = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Nome obbligatorio"),
-    email: Yup.string()
-      .email("Email non valida")
-      .required("Email obbligatoria"),
+    name: Yup.string().required("Name required"),
+    email: Yup.string().email("Invalid e-mail").required("E-mail required"),
     date: Yup.date()
-      .min(
-        new Date(),
-        "'La data di prenotazione non può essere precedente a oggi"
-      )
+      .min(new Date(), "Reservation date cannot be earlier than today")
       .max(
         new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
-        "non puoi prenotare oltre una settimana"
+        "You cannot book for more than a week"
       )
       .required("Data obbligatoria"),
     time: Yup.string()
       .test(
         "in-range",
-        "L'ora selezionata non è disponibile per la prenotazione",
+        "The times available are: 12:00 - 15:00 / 19:00 - 23:00",
         (value) => {
           const selectedTime = new Date(`1970-01-01T${value}:00`).getTime();
           const startTime1 = new Date(`1970-01-01T12:00:00`).getTime();
@@ -47,23 +42,22 @@ const BookingForm = () => {
           );
         }
       )
-      .required("Orario obbligatorio"),
+      .required("Time required"),
     guests: Yup.number()
       .positive()
       .max(30)
       .integer()
-      .required("Numero di ospiti obbligatorio"),
-    place: Yup.string().required(""),
+      .required("number of guests required"),
+    place: Yup.string(),
   });
 
   const onSubmit = (values, { setSubmitting }) => {
-
+    window.scroll(0, 0);
+    setTimeout(() => {
       setFormValues(values);
       setSubmitting(false);
-      console.log("submit");
-
-      //navigate("/bookingconfirmation");
-
+      navigate("/bookingconfirmation");
+    }, 400);
   };
 
   return (
@@ -83,7 +77,7 @@ const BookingForm = () => {
           <Form>
             <div className="form">
               <div className="field-group">
-                <label htmlFor="name">Nome:</label>
+                <label htmlFor="name">Name:</label>
                 <Field type="text" name="name" />
                 <ErrorMessage name="name" component="span" />
               </div>
@@ -101,13 +95,13 @@ const BookingForm = () => {
               </div>
 
               <div className="field-group">
-                <label htmlFor="time">Orario:</label>
+                <label htmlFor="time">Time:</label>
                 <Field type="time" name="time" />
                 <ErrorMessage name="time" component="span" />
               </div>
 
               <div className="field-group">
-                <label htmlFor="guests">Numero di ospiti:</label>
+                <label htmlFor="guests">Guests:</label>
                 <Field type="number" name="guests" />
                 <ErrorMessage name="guests" component="span" />
               </div>
