@@ -1,24 +1,22 @@
 import { useContext } from "react";
 import { FormContext } from "../context/formcontext";
 import "../App.css";
+import Reservation from "../components/reservation";
+import LemonButton from "../components/LemonButton";
+import { Link } from "react-router-dom";
 const BookingConfirmation = () => {
   const { formValues } = useContext(FormContext);
-  const elements = () => {
-    const tmp = [];
-    for (const value in formValues) {
-      tmp.push(formValues[value]);
-    }
-    return tmp;
-  };
 
-  console.log(elements());
   return (
     <section className="confirmation">
-      {Object.values(formValues).every((value) => value === "")
-        ? <h6>nessuna prenotazione</h6>
-        : elements().map((value, i) => {
-            return <p key={i}>{value}</p>;
-          })}
+      {Object.values(formValues).every((value) => value === "") ? (
+        <h6>nessuna prenotazione</h6>
+      ) : (
+        <Reservation bookingData={formValues} />
+      )}
+      <Link to={"/"}>
+        <LemonButton>Return Home</LemonButton>
+      </Link>
     </section>
   );
 };

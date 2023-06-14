@@ -28,7 +28,7 @@ const Menù = () => {
       description: "Dai Dai, Gelato alla Panna con Pinoli, Miele e Cacao",
       price: "7",
       image:
-        "https://grandrestaurantv6-7.b-cdn.net/clean/wp-content/uploads/sites/2/2022/09/concept-of-tasty-food-salad-with-red-orange-top-2022-04-13-15-32-21-utc-660x740.jpg",
+        "https://images.pexels.com/photos/3186751/pexels-photo-3186751.jpeg",
     },
   ];
   return (
@@ -40,7 +40,7 @@ const Menù = () => {
         </Link>
       </div>
       <div className="lista-menu">
-        {foods.map((food,i) => {
+        {foods.map((food, i) => {
           return (
             <Card
               key={i}
