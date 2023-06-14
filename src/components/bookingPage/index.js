@@ -4,8 +4,7 @@ import BookingForm from "./form";
 const BookingHeader = () => {
   return (
     <section className="booking">
-      <h1>Book a Table</h1>
-      <div className="form">
+      <div className="form-layout">
         <img src={Restaurant} alt="img" />
         <BookingForm />
       </div>

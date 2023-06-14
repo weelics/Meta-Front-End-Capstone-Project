@@ -35,12 +35,15 @@ const Menù = () => {
     <section className="menu">
       <div className="section-header">
         <h3>View Our Menus</h3>
-        <Link to={"/menu"}><button>View All</button></Link>
+        <Link>
+          <button>View All</button>
+        </Link>
       </div>
       <div className="lista-menu">
-        {foods.map((food) => {
+        {foods.map((food,i) => {
           return (
             <Card
+              key={i}
               img={food.image}
               title={food.title}
               description={food.description}

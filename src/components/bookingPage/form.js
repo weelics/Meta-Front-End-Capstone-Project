@@ -5,7 +5,7 @@ import { FormContext } from "../../context/formcontext";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = () => {
-  const {setFormValues} = useContext(FormContext);
+  const { setFormValues } = useContext(FormContext);
   const navigate = useNavigate();
   const initialValues = {
     name: "",
@@ -13,7 +13,7 @@ const BookingForm = () => {
     date: "",
     time: "",
     guests: "",
-    place: ""
+    place: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -53,13 +53,17 @@ const BookingForm = () => {
       .max(30)
       .integer()
       .required("Numero di ospiti obbligatorio"),
-    place: Yup.string().required("")
+    place: Yup.string().required(""),
   });
 
   const onSubmit = (values, { setSubmitting }) => {
 
       setFormValues(values);
-      navigate("/bookingconfirmation");
+      setSubmitting(false);
+      console.log("submit");
+
+      //navigate("/bookingconfirmation");
+
   };
 
   return (
@@ -77,37 +81,52 @@ const BookingForm = () => {
       >
         {({ isSubmitting }) => (
           <Form>
-            <label htmlFor="name">Nome:</label>
-            <Field type="text" name="name" />
-            <ErrorMessage name="name" component="span" />
-            <br />
-            <label htmlFor="email">Email:</label>
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="span" />
-            <br />
-            <label htmlFor="date">Data:</label>
-            <Field type="date" name="date" />
-            <ErrorMessage name="date" component="span" />
-            <br />
-            <label htmlFor="time">Orario:</label>
-            <Field type="time" name="time" />
-            <ErrorMessage name="time" component="span" />
-            <br />
-            <label htmlFor="guests">Numero di ospiti:</label>
-            <Field type="number" name="guests" />
-            <ErrorMessage name="guests" component="span" />
-            <br />
-            <label htmlFor="place">Table preference</label>
-            <Field as="select" name="place">
-              <option value="indifferent">indifferent</option>
-              <option value="inside">Inside</option>
-              <option value="outside">Outside</option>
-            </Field>
-            <ErrorMessage name="place" component="span" />
-            <br />
-            <button type="submit" disabled={isSubmitting}>
-              Prenota
-            </button>
+            <div className="form">
+              <div className="field-group">
+                <label htmlFor="name">Nome:</label>
+                <Field type="text" name="name" />
+                <ErrorMessage name="name" component="span" />
+              </div>
+
+              <div className="field-group">
+                <label htmlFor="email">Email:</label>
+                <Field type="email" name="email" />
+                <ErrorMessage name="email" component="span" />
+              </div>
+
+              <div className="field-group">
+                <label htmlFor="date">Data:</label>
+                <Field type="date" name="date" />
+                <ErrorMessage name="date" component="span" />
+              </div>
+
+              <div className="field-group">
+                <label htmlFor="time">Orario:</label>
+                <Field type="time" name="time" />
+                <ErrorMessage name="time" component="span" />
+              </div>
+
+              <div className="field-group">
+                <label htmlFor="guests">Numero di ospiti:</label>
+                <Field type="number" name="guests" />
+                <ErrorMessage name="guests" component="span" />
+              </div>
+              <div className="field-group">
+                <label htmlFor="place">Table preference</label>
+                <Field as="select" name="place">
+                  <option value="indifferent">indifferent</option>
+                  <option value="inside">Inside</option>
+                  <option value="outside">Outside</option>
+                </Field>
+                <ErrorMessage name="place" component="span" />
+              </div>
+
+              <div className="field-group">
+                <button type="submit" disabled={isSubmitting}>
+                  Prenota
+                </button>
+              </div>
+            </div>
           </Form>
         )}
       </Formik>
